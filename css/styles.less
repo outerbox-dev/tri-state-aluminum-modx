@@ -1,0 +1,210 @@
+/*======================================================
+Screen Style Sheet
+PROJECT
+------------------------------------------------------
+Author(s):NAME
+Created:DATE
+======================================================*/
+
+/* ---- Media Queries ---- */
+
+@desktop:   ~"only screen and (min-width: 1199px)";
+@tablet:    ~"only screen and (min-width: 767px) and (max-width: 1199px)";
+@mobile:    ~"only screen and (max-width: 767px)";
+
+/* ---- Font and color variable in styles.css---- */
+
+/* ---- General Settings ---- */
+body {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	letter-spacing: 0.02em;
+	font-family: @opensans;
+	color: var(--black);
+	background-color: transparent;
+	padding-top:100px;
+	margin:0 !important;
+	overflow-x: hidden;
+	@media @desktop{
+		a[href^="tel:"]{
+			pointer-events: none;
+			text-decoration: none;
+		}
+	}
+	.fauxlink{
+		cursor: pointer;
+	}
+	a{
+		color:var(--black);
+	}
+	a:focus,
+	input:focus{
+		outline: none;
+	}
+	.richtext{
+		a{
+			color:var(--black);
+			text-decoration: underline;
+		}
+		a:hover{
+			color:@blue;
+			text-decoration: none;
+		}
+		ul{
+			padding-left: 20px;
+			li{
+				padding: 5px 0 5px 5px;
+				ul{
+					margin:10px 0;
+				}
+			}
+		}
+	}
+	ul.fancy {
+		list-style: none;
+		text-align: left;
+		margin: 15px 0;
+		padding: 0;
+	}
+	ul.fancy li {
+		padding: 5px 0 5px 25px;
+		position: relative;
+	}
+	ul.fancy li:before {
+		color: #D3D4D8;
+		content: "\f111";
+		font-family: 'Font Awesome 6 Pro';
+		font-size: 12px;
+		font-weight: 900;
+		display: block;
+		position: absolute;
+		top: 6px;
+		left: 0;
+	}
+}
+
+/* ---- Block BG Settings ---- */
+.block{
+	&.bg-white,
+	.bg-white{
+		background: var(--white);
+	}
+	&.bg-black,
+	.bg-black{
+		background: var(--black);
+		.heading,p,ul li,ol li,a:not(.button){
+			color:var(--white);
+		}
+		a:not(.button):hover{
+			color:@blue;
+		}
+	}
+}
+
+/* ---- Button ---- */
+.button{
+	font-size:14px;
+	font-weight: bold;
+	text-align:center;
+	text-transform:uppercase;
+	height: auto;
+	line-height: normal;
+	text-decoration:none ;
+	display:inline-block;
+	margin:0 auto;
+	padding:10px 24px;
+	color:var(--white);
+	background:var(--black);
+	border:none;
+	box-shadow:none;
+	border-radius: 0;
+	&:hover{
+		color:var(--white);
+		background:@blue;
+	}
+	&.white-btn{
+		color:var(--black);
+		background:var(--white);
+		&:hover{
+			color:var(--white);
+			background:@blue;
+		}
+	}
+	&.blue-btn{
+		color:var(--white);
+		background:@blue;
+		&:hover{
+			color:var(--white);
+			background:var(--black);
+		}
+	}
+}
+
+/* ---- Header ---- */
+#header{
+	height: 100px;
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	z-index: 3;
+	background:var(--white);
+	&.scrolling{
+		box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.1);
+	}
+	#header-top{
+		.constrain{
+			display: flex;
+			flex-direction: row;
+		}
+	}
+	#header-bottom{
+		.constrain{
+			display: flex;
+			flex-direction: row;
+			.logo{
+				width: 200px;
+			}
+		}
+	}
+	@media @tablet,@mobile{
+		nav{
+			display: none;
+		}
+		#primary-toggle {
+			  width: 60px;
+			  height: 60px;
+			  background: url(/assets/images/template/mobile-menu-icon.svg) no-repeat center center;
+			  background-size: contain;
+			  position: absolute;
+			  right:20px;
+			  cursor: pointer;
+			  &.active {
+				  background-image: url(/assets/images/template/close.svg);
+				  background-size: 60%;
+			  }
+		}
+	}
+}
+
+/* ---- Bucket Types---- */
+
+
+/* ---- Elements --- */
+
+
+/* ---- Forms --- */
+
+
+/* ---- Footer ---- */
+#footer {
+	clear:both;
+	#footer-top{
+		padding:20px 0;
+	}
+	#footer-bottom {
+		font-size:0.8em;
+		padding:20px 0;
+	}
+}

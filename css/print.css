@@ -1,0 +1,21 @@
+.clearfix:after {content:"";display:block;height:0;clear:both;}
+.hidden, #global-nav, nav, .form-search, #home-banner, .rfq-btn, .learnmore, .readmore, .social-bar-container, #sidebar-right, #sidebar-left, .content-cta, #recaptcha_widget {display: none !important;}
+h1 {font-size: 22px;}
+h2 {font-size: 20px}
+h3 {font-size: 18px;}
+h4 {font-size: 16px;}
+#content a[href]:after {display:none;} 
+#bread-social {border-top:1px solid #ccc !important;border-bottom:1px solid #ccc !important;margin:10px 0;padding:10px 0;}
+#bread-social ul {list-style: none;margin:0;padding:0;float:none;clear: both;}
+#bread-social ul li {font-size:11px;text-transform:uppercase;float: left;margin-right: 8px;}
+#bread-social li + li:before{
+	content:"\003e";
+	margin:0 5px 0 0;
+	display: inline-block;
+}
+#main-content img {
+	max-width: 25%;
+	margin:10px;
+	float: right;
+	display: block;
+}
